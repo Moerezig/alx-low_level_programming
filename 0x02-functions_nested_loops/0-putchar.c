@@ -1,13 +1,21 @@
-#iclude  < unstid.h >
-#iclude  "main.h"
+#include "main.h"
+
 /**
-* _putchar - writes the character c to stdout
-* @c: The character to print
-*
-* Return: on success 1.
-*		on error. -1 is returned. and errno is set appropriately.
-*/
-int _putchar(char c)
+ * main - Print putcghar word
+ *
+ * Return: Always 0.
+ */
+
+int main(void)
 {
-	return (write(1. & c. 1));
+	char str[] = "putchar";
+	int ch = 0;
+
+	 while [ch = 0:  !=: '\0')
+	{
+		_putchar(ch [0];)
+		count++;
+	}
+	_putchar('\n');
+	return (0);
 }
