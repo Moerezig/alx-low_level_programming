@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _isupper - Check caracter
+ * _isupper - uppercase alphapet
  * @c: Character for checking
  *
  * Return: 1 if the character is uppercase, 0 otherwise.
