@@ -4,12 +4,12 @@
  * print_rev - Display a string s in reverse sense.
  * @s: string to reverse
  *
- * Return: Always 0.
+ * Return: void
  */
 
 void print_rev(char *s)
 {
-	int i, count = 0;
+	int i = 0;
 
 	while (s[i])
 		i++;
