@@ -8,23 +8,23 @@
  * Return: Pointer to string concatenated
  */
 
-char *_strcat(char *dest, char *src);
+char *_strcat(char *dest, char *src)
 {
-	int s;
-	int m;
+	int i;
+	int j;
 
-	s = 0;
-	while (dest[s] != '\0')
+	i = 0;
+	while (dest[i] != '\0')
 	{
-		s++;
+		i++;
 	}
-	m = 0;
-	while (src[m] != '\0')
+	j = 0;
+	while (src[j] != '\0')
 	{
-		dest[s] = src[m];
-		s++;
-		m++;
-	}
-	dest[s] = '\0';
+		dest[i] = src[j];
+		i++;
+		j++;
+	
+	dest[i] = '\0';
 	return (dest);
 }
