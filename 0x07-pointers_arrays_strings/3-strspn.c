@@ -32,4 +32,4 @@ unsigned int _strspn(char *s, char *accept)
 			return (len);
 		s++;
 	}
-	return (len)
+	return (len);
