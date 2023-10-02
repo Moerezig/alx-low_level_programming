@@ -1,22 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
- * main - entry point
- * @argc: number of arguments for the function
- * @argv: arguments for the function
- *
- * Return: always 0.
+ * main - print the result of the multiplication, followed by a new line
+ * @argc: int
+ * @argv: list
+ * Return: 0
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char const *argv[])
 {
-	if (argc <= 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	else
-		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
-	return (0);
+(void)argc;
+
+if (argc != 3)
+{
+	printf("Error\n");
+	return (1);
+}
+printf("%i\n", atoi(argv[1]) * atoi(argv[2]));
+return (0);
 }
