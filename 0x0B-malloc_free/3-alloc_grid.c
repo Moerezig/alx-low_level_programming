@@ -1,52 +1,52 @@
-#include "main.h"
-
-/**
- * **alloc_grid - function that returns a pointer to a 2 dimensional array of
- *                integers.
- *
- * @width: This is the columns of the array
- * @height: This is the rows of the array
- *
- * Return: Returns a pointer to a 2 dimensional array of integers.
- *         The function should return NULL on failure
- *         If width or height is 0 or negative, return NULL
+/*
+ * File: 3-alloc_grid.c
+ * Auth: Gedeon Obae Gekonge
  */
 
-int **alloc_grid(int width, int height) /* 6 columns and 4 rows*/
+#include "main.h"
+#include <stdlib.h>
+
+/**
+ * alloc_grid - Returns a pointer to a 2-dimensional array of
+ *               integers with each element initalized to 0.
+ * @width: The width of the 2-dimensional array.
+ * @height: The height of the 2-dimensional array.
+ *
+ * Return: If width <= 0, height <= 0, or the function fails - NULL.
+ *         Otherwise - a pointer to the 2-dimensional array of integers.
+ */
+int **alloc_grid(int width, int height)
 {
-	int j, i;
-	int **arr;
+	int **twoD;
+	int hgt_index, wid_index;
 
-	if (width < 1 || height < 1)
+	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	arr = (int **)malloc(sizeof(int *) * height);
-	if (arr == NULL)
-	{
-		free(arr);
-		return (NULL);
-	}
+	twoD = malloc(sizeof(int *) * height);
 
-	for (i = 0; i < height; i++)
+	if (twoD == NULL)
+		return (NULL);
+
+	for (hgt_index = 0; hgt_index < height; hgt_index++)
 	{
-		arr[i] = malloc(sizeof(int) * width);
-		if (arr[i] == NULL)
+		twoD[hgt_index] = malloc(sizeof(int) * width);
+
+		if (twoD[hgt_index] == NULL)
 		{
-			for (i = 0; i < height; i++)
-			{
-				free(arr[i]);
-			}
-			free(arr);
+			for (; hgt_index >= 0; hgt_index--)
+				free(twoD[hgt_index]);
+
+			free(twoD);
 			return (NULL);
 		}
 	}
 
+	for (hgt_index = 0; hgt_index < height; hgt_index++)
+	{
+		for (wid_index = 0; wid_index < width; wid_index++)
+			twoD[hgt_index][wid_index] = 0;
+	}
 
-	for (i = 0; i < height; i++)
-		for (j = 0; j < width; j++)
-		{
-			arr[i][j] = 0;
-		}
-
-	return (arr);
+	return (twoD);
 }
