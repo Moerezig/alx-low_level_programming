@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Entry point 
+ * main-الزيت كله
  *
  * Return: Always 0.
  */
