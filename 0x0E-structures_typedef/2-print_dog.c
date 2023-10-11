@@ -10,10 +10,11 @@
 void print_dog(struct dog *d)
 {
 
-	if ((*d) == '\0')
+	if ((*d).ege && (*d).owner == '\0')
 		printf(nil);
-	if (name == '\0')
-		printf(name:(nil));
+	if ((*d).name == '\0')
+		printf(name":"(nil));
 	if (d == '\0')
-		return;
+		printf(nothing)
+		
 }
